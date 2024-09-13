@@ -1,46 +1,58 @@
-# Getting Started with Create React App
+<h1 align="center">
+  Trello App
+</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![Node.js CI](https://github.com/DanielFerrariR/trello-app/actions/workflows/node.js.yml/badge.svg)](https://github.com/DanielFerrariR/trello-app/actions/workflows/node.js.yml)
+[![codecov](https://codecov.io/gh/DanielFerrariR/trello-app/branch/master/graph/badge.svg?token=xqzOMvxham)](https://codecov.io/gh/DanielFerrariR/trello-app)
 
-## Available Scripts
+## TOC
 
-In the project directory, you can run:
+- [Configuration](#configuration)
+- [Links](#links)
 
-### `npm start`
+## Configuration
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+1. **Install these packages (prefer the listed versions):**
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- node v20.10.0
 
-### `npm test`
+2. **Install all dependencies**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```sh
+npm install
+```
 
-### `npm run build`
+3. **Start the development server**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```sh
+npm start
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+4. **Commands**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+# Install all dependencies
+$ npm install
 
-### `npm run eject`
+# Run for web development
+$ npm start
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+# Build for web production (compiled to build folder)
+$ npm run build
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Export configuration files
+$ npm run eject
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+# Run Storybook
+$ npm run storybook
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+# Build Storybook
+$ npm run build-storybook
 
-## Learn More
+# Run Chromatic (needs a .env file with CHROMATIC_PROJECT_TOKEN token)
+$ npm run chromatic
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Links
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+[Codcov](https://app.codecov.io/gh/DanielFerrariR/trello-app)

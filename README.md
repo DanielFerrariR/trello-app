@@ -3,7 +3,7 @@
 </h1>
 
 [![Node.js CI](https://github.com/DanielFerrariR/trello-app/actions/workflows/node.js.yml/badge.svg)](https://github.com/DanielFerrariR/trello-app/actions/workflows/node.js.yml)
-[![codecov](https://codecov.io/gh/DanielFerrariR/trello-app/branch/master/graph/badge.svg?token=xqzOMvxham)](https://codecov.io/gh/DanielFerrariR/trello-app)
+[![codecov](https://codecov.io/gh/DanielFerrariR/trello-app/graph/badge.svg?token=cggIbUEbi9)](https://codecov.io/gh/DanielFerrariR/trello-app)
 
 ## TOC
 

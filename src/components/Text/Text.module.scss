@@ -1,0 +1,44 @@
+.page {
+  font-family: var(--typography-page-fontFamily);
+  font-size: var(--typography-page-fontSize);
+  font-weight: var(--typography-page-fontWeight);
+  font-style: var(--typography-page-fontStyle);
+  line-height: var(--typography-page-lineHeight);
+  color: var(--typography-page-color);
+}
+
+.section {
+  font-family: var(--typography-section-fontFamily);
+  font-size: var(--typography-section-fontSize);
+  font-weight: var(--typography-section-fontWeight);
+  font-style: var(--typography-section-fontStyle);
+  line-height: var(--typography-section-lineHeight);
+  color: var(--typography-section-color);
+}
+
+.subsection {
+  font-family: var(--typography-subsection-fontFamily);
+  font-size: var(--typography-subsection-fontSize);
+  font-weight: var(--typography-subsection-fontWeight);
+  font-style: var(--typography-subsection-fontStyle);
+  line-height: var(--typography-subsection-lineHeight);
+  color: var(--typography-subsection-color);
+}
+
+.paragraph {
+  font-family: var(--typography-paragraph-fontFamily);
+  font-size: var(--typography-paragraph-fontSize);
+  font-weight: var(--typography-paragraph-fontWeight);
+  font-style: var(--typography-paragraph-fontStyle);
+  line-height: var(--typography-paragraph-lineHeight);
+  color: var(--typography-paragraph-color);
+}
+
+.caption {
+  font-family: var(--typography-caption-fontFamily);
+  font-size: var(--typography-caption-fontSize);
+  font-weight: var(--typography-caption-fontWeight);
+  font-style: var(--typography-caption-fontStyle);
+  line-height: var(--typography-caption-lineHeight);
+  color: var(--typography-caption-color);
+}

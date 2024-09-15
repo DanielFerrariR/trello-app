@@ -7,8 +7,57 @@
 
 ## TOC
 
+- [Working in Progress](#working-in-progress)
 - [Configuration](#configuration)
 - [Links](#links)
+
+## Working in Progress
+
+Required features
+
+- [ ] Create Board
+- [ ] Delete Board
+- [x] Edit Board Title
+- [x] Create List
+- [ ] Delete List
+- [x] Create Card
+- [x] Edit Card
+- [ ] Delete Card
+- [ ] Move Cards between lists
+- [ ] Keep boards state in localStorage
+- [ ] Add storybook stories for all components
+- [ ] Add missing tests
+
+Additional features
+
+General features
+
+- [ ] Member Account
+
+Board features
+
+- [ ] Clone board
+- [ ] Archived items
+- [ ] Share link
+- [ ] Export board
+- [ ] Activity history
+
+Card features
+
+- [ ] Clone card
+- [ ] Archive card
+- [ ] Move all cards from a list to the other
+- [ ] Comments
+- [ ] Dates
+- [ ] Layers
+- [ ] Tags
+- [ ] Members
+
+List features
+
+- [ ] Clone list
+- [ ] Archive list
+- [ ] Move list between boards
 
 ## Configuration
 

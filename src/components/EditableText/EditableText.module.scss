@@ -1,0 +1,36 @@
+.wrapper {
+  position: relative;
+}
+
+.textarea {
+  border: 1px solid var(--palette-common-black);
+  border-radius: 4px;
+  position: absolute;
+  width: 100%;
+  resize: none;
+  background-color: transparent;
+  padding: 2px 4px;
+  opacity: 0;
+  height: 100%;
+  overflow: hidden;
+  cursor: pointer;
+
+  &:focus-visible {
+    border: 1px solid transparent;
+    outline: 2px solid var(--palette-primary-main);
+  }
+}
+
+.text {
+  border: 1px solid transparent;
+  padding: 2px 4px;
+  white-space: pre-wrap;
+}
+
+.hide {
+  opacity: 0.5;
+}
+
+.show {
+  opacity: 1;
+}

@@ -1,0 +1,65 @@
+.wrapper {
+  background-color: var(--palette-background);
+  height: 100dvh;
+  padding-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.boardTitle {
+  padding: 0 24px;
+  width: calc(100% - 48px);
+
+  h2 {
+    width: calc(100% + 48px);
+  }
+}
+
+.board {
+  display: flex;
+  padding-left: 24px;
+  gap: 16px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  height: 100%;
+}
+
+.listWrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 2px 4px;
+  gap: 16px;
+  overflow: auto;
+}
+
+.list {
+  background-color: var(--palette-grey-50);
+  border-radius: 4px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-shadow: var(--shadows-0);
+  max-width: 272px;
+  min-width: 272px;
+  height: fit-content;
+  max-height: calc(100% - 16px);
+}
+
+.card {
+  background-color: var(--palette-common-white);
+  border-radius: 4px;
+  box-shadow: var(--shadows-0);
+  cursor: pointer;
+}
+
+.addListButton {
+  max-width: 240px;
+  min-width: 240px;
+}
+
+.buttonRightGap:after {
+  content: '';
+  border-right: 24px solid transparent;
+}

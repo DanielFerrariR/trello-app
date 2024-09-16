@@ -7,12 +7,14 @@ export interface ModalProps {
   className?: string;
   children: React.ReactNode;
   onClickOutside?: () => void;
+  testId?: string;
 }
 
 const Modal = ({
   className,
   children,
   onClickOutside,
+  testId,
 }: ModalProps): React.ReactElement => {
   const overlayRef = useRef<HTMLDivElement>(null);
 
@@ -33,6 +35,7 @@ const Modal = ({
       ref={overlayRef}
       className={styles.wrapper}
       onClick={handleClickOutside}
+      data-testid={testId}
     >
       <div className={classNames(styles.modal, className)}>{children}</div>
     </div>,

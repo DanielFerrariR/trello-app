@@ -32,7 +32,7 @@
 
 Project related
 
-- [ ] Missing tests for Modal and Home Page
+- [ ] Missing tests for Home Page
 
 General features
 

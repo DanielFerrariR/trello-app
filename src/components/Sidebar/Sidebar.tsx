@@ -11,6 +11,7 @@ interface SidebarProps {
   children: React.ReactNode;
   initialState?: boolean;
   onToggle?: (isOpen: boolean) => void;
+  testId?: string;
 }
 
 const Sidebar = ({
@@ -18,6 +19,7 @@ const Sidebar = ({
   children,
   initialState = false,
   onToggle,
+  testId,
 }: SidebarProps): React.ReactElement => {
   const [isOpen, setIsOpen] = useState(initialState);
 
@@ -36,6 +38,7 @@ const Sidebar = ({
         !isOpen && styles.isClosed,
         className
       )}
+      data-testid={testId}
     >
       {isOpen ? (
         <>

@@ -5,11 +5,16 @@ import styles from './Icon.module.scss';
 interface IconProps {
   className?: string;
   icon: FunctionComponent<SVGProps<SVGSVGElement>>;
+  testId?: string;
 }
 
-const Icon = ({ className, icon: Icon }: IconProps): React.ReactElement => {
+const Icon = ({
+  className,
+  icon: Icon,
+  testId,
+}: IconProps): React.ReactElement => {
   return (
-    <div className={classNames(styles.icon, className)}>
+    <div className={classNames(styles.icon, className)} data-testid={testId}>
       <Icon />
     </div>
   );

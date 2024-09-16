@@ -13,13 +13,11 @@ export interface TitleProps {
   className?: string;
   type?: TextType;
   children?: ReactNode;
-  role?: string;
 }
 
 interface DynamicTagComponentProps {
   className?: string;
   type: TextType;
-  role?: string;
   children?: ReactNode;
 }
 

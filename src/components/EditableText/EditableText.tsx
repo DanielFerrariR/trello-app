@@ -11,6 +11,7 @@ interface EditableTextProps {
   onChangeText: (text: string) => void;
   type?: TextType;
   maxLength?: number;
+  testId?: string;
 }
 
 const EditableText = ({
@@ -19,6 +20,7 @@ const EditableText = ({
   onChangeText,
   type = 'paragraph',
   maxLength,
+  testId,
 }: EditableTextProps): React.ReactElement => {
   const [isEditing, setIsEditing] = useState(false);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
@@ -51,6 +53,7 @@ const EditableText = ({
     <div
       className={classNames(styles.wrapper, className)}
       onClick={() => setIsEditing(true)}
+      data-testid={testId}
     >
       <textarea
         onKeyDown={handleKeyDown}

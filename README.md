@@ -13,7 +13,7 @@
 
 ## Working in Progress
 
-Required features
+### Required features
 
 - [x] Create Board
 - [x] Delete Board
@@ -26,9 +26,13 @@ Required features
 - [x] Move Cards between lists
 - [x] Keep boards state in localStorage
 - [x] Add storybook stories for all components
-- [ ] Add missing tests
+- [x] Add missing tests
 
-Additional features
+### Additional features
+
+Project related
+
+- [ ] Missing tests for Modal and Home Page
 
 General features
 

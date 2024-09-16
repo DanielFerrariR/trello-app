@@ -15,17 +15,17 @@
 
 Required features
 
-- [ ] Create Board
-- [ ] Delete Board
+- [x] Create Board
+- [x] Delete Board
 - [x] Edit Board Title
 - [x] Create List
-- [ ] Delete List
+- [x] Delete List
 - [x] Create Card
 - [x] Edit Card
-- [ ] Delete Card
-- [ ] Move Cards between lists
-- [ ] Keep boards state in localStorage
-- [ ] Add storybook stories for all components
+- [x] Delete Card
+- [x] Move Cards between lists
+- [x] Keep boards state in localStorage
+- [x] Add storybook stories for all components
 - [ ] Add missing tests
 
 Additional features
@@ -41,9 +41,14 @@ Board features
 - [ ] Share link
 - [ ] Export board
 - [ ] Activity history
+- [ ] Board title should be applied to browser tab name
 
 Card features
 
+- [ ] Create a new card should focus in the new card textbox and show add/close buttons, if no text is added, it deletes the new card
+- [ ] Change card order in the list
+- [ ] Dragged card missing board radius (needs to replace dragged image or use external drag and drop library)
+- [ ] Edit icon on hover / Right click on card opens a edit text modal and show an action bar
 - [ ] Clone card
 - [ ] Archive card
 - [ ] Move all cards from a list to the other
@@ -53,8 +58,15 @@ Card features
 - [ ] Tags
 - [ ] Members
 
+Edit Card Modal
+
+- [ ] Click in 'in the list [list name]' opens 'Move card' modal
+- [ ] Unsaved changes for description
+- [ ] RichText description
+
 List features
 
+- [ ] Actions Menu
 - [ ] Clone list
 - [ ] Archive list
 - [ ] Move list between boards

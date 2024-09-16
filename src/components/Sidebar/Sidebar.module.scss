@@ -1,0 +1,73 @@
+.wrapper {
+  min-width: 256px;
+  max-width: 256px;
+  position: relative;
+  height: 100dvh;
+  box-shadow: var(--shadows-2);
+}
+
+.isClosed {
+  min-width: 16px;
+  max-width: 16px;
+  box-shadow: var(--shadows-0);
+}
+
+.sideBarButton {
+  height: 100%;
+  min-width: 16px;
+  max-width: 16px;
+  box-shadow: var(--shadows-2);
+  border: 1px solid transparent;
+  background-color: var(--palette-common-white);
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--palette-grey-100);
+
+    .openIcon {
+      background-color: var(--palette-grey-100);
+    }
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--palette-primary-dark);
+    outline-offset: 1px;
+  }
+
+  &:active {
+    background-color: var(--palette-grey-200);
+
+    .openIcon {
+      background-color: var(--palette-grey-200);
+    }
+  }
+}
+
+.closeIcon {
+  position: absolute;
+  right: -16px;
+  top: 24px;
+  z-index: 1;
+  background-color: var(--palette-common-white);
+  box-shadow: var(--shadows-1);
+}
+
+.openIcon {
+  border: 1px solid var(--palette-common-white);
+  background-color: var(--palette-common-white);
+  border-radius: 50%;
+  min-width: 24px;
+  max-width: 24px;
+  min-height: 24px;
+  max-height: 24px;
+  position: absolute;
+  z-index: 1;
+  right: -12px;
+  top: 24px;
+  box-shadow: var(--shadows-1);
+
+  svg {
+    width: 18px;
+    height: 18px;
+  }
+}

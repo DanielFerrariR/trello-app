@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
-import styles from './EditableText.module.scss';
-import textStyles from '../Text/Text.module.scss';
 import classNames from 'classnames';
 import { Text } from '../Text';
 import { TextType } from '../Text/Text';
+import textStyles from '../Text/Text.module.scss';
+import styles from './EditableText.module.scss';
 
 interface EditableTextProps {
   className?: string;
@@ -35,7 +35,7 @@ const EditableText = ({
 
   const handleBlur = () => {
     const newValue = isValueEmpty ? text : value.trim();
-    onChangeText(isValueEmpty ? text : newValue);
+    onChangeText(newValue);
     setValue(newValue);
     setIsEditing(false);
   };

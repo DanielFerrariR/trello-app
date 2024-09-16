@@ -1,0 +1,36 @@
+.button {
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  min-height: 36px;
+  max-height: 36px;
+  min-width: 36px;
+  max-width: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  svg {
+    width: 18px;
+    height: 18px;
+    fill: var(--text-primary);
+  }
+
+  &:hover {
+    background-color: var(--palette-grey-200);
+    border: 1px solid var(--palette-grey-200);
+  }
+
+  &:focus-visible {
+    background-color: var(--palette-grey-200);
+    border: 1px solid var(--palette-grey-200);
+    outline: 2px solid var(--palette-primary-dark);
+    outline-offset: 1px;
+  }
+
+  &:active {
+    background-color: var(--palette-grey-300);
+    border: 1px solid var(--palette-grey-300);
+  }
+}

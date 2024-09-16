@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import { Home } from './pages/Home';
 import reportWebVitals from './reportWebVitals';
 import './theme/reset.css';
-import { ThemeProvider } from './providers/ThemeProvider';
+import ThemeProvider from './theme/ThemeProvider';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement

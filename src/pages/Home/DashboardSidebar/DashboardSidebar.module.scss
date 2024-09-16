@@ -1,0 +1,81 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.boardListTitleWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 24px 24px 0 24px;
+}
+
+.boardListTitle {
+  font-weight: bold;
+}
+
+.boardListWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  overflow: auto;
+  padding: 4px 0;
+}
+
+.boardButtonWrapper {
+  position: relative;
+
+  &:hover,
+  &:focus-within {
+    .deleteBoardButton {
+      opacity: 1;
+    }
+  }
+}
+
+.boardButton {
+  padding-left: 24px;
+  padding-right: 48px; // delete icon size + margin right
+  height: 36px;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  background: none;
+  border: none;
+  color: var(--typography-paragraph-color);
+  font-family: var(--typography-paragraph-fontFamily);
+  font-size: var(--typography-paragraph-fontSize);
+  font-style: var(--typography-paragraph-fontStyle);
+  line-height: var(--typography-paragraph-fontSize);
+  cursor: pointer;
+
+  &:hover {
+    background: var(--palette-grey-100);
+  }
+
+  &:focus-visible {
+    outline: none;
+    background: var(--palette-grey-100);
+  }
+
+  &:active {
+    background: var(--palette-grey-200);
+  }
+}
+
+.isCurrentBoard {
+  background-color: var(--palette-primary-main);
+  color: white;
+  pointer-events: none;
+}
+
+.deleteBoardButton {
+  position: absolute;
+  right: 8px;
+  top: 0;
+  opacity: 0;
+}

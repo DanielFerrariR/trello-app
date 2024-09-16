@@ -1,5 +1,5 @@
-import classNames from 'classnames';
 import React, { ReactNode } from 'react';
+import classNames from 'classnames';
 import styles from './Text.module.scss';
 
 export type TextType =

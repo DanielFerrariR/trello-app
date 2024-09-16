@@ -1,0 +1,29 @@
+.textarea {
+  border: 1px solid var(--palette-common-black);
+  border-radius: 4px;
+  margin-top: 16px;
+  resize: none;
+  padding: 8px;
+  font-family: var(--typography-paragraph-fontFamily);
+  font-size: var(--typography-paragraph-fontSize);
+  font-style: var(--typography-paragraph-fontStyle);
+  line-height: var(--typography-paragraph-fontSize);
+  color: var(--typography-paragraph-color);
+
+  &::placeholder {
+    color: var(--palette-text-hint);
+  }
+
+  &:hover {
+    border: 1px solid var(--palette-primary-light);
+  }
+
+  &:active {
+    border: 1px solid var(--palette-primary-dark);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--palette-primary-dark);
+    outline-offset: 1px;
+  }
+}

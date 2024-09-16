@@ -1,0 +1,21 @@
+.wrapper {
+  background-color: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal {
+  width: calc(100% - 16px);
+  max-width: 800px;
+  height: calc(100% - 16px);
+  max-height: 800px;
+  background-color: var(--palette-common-white);
+  box-shadow: var(--shadows-2);
+  border-radius: 4px;
+}

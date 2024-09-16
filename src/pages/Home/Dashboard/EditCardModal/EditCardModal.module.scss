@@ -1,0 +1,50 @@
+.modal {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.titleWrapper {
+  display: flex;
+  gap: 8px;
+}
+
+.closeButton svg {
+  width: 24px;
+  height: 24px;
+}
+
+.title {
+  width: calc(
+    100% - 24px - 16px - 36px
+  ); // modal size - title icon - gaps - close icon
+
+  textarea,
+  h2 {
+    font-weight: bold;
+  }
+}
+
+.listDetails {
+  margin-top: 8px;
+  margin-left: 36px;
+}
+
+.listName {
+  text-decoration: underline;
+}
+
+.descriptionWrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 48px;
+}
+
+.descriptionTitle {
+  font-weight: bold;
+}
+
+.descriptionTextarea {
+  height: 100%;
+}

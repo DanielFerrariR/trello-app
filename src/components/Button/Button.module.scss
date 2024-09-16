@@ -12,6 +12,16 @@
   font-style: var(--typography-paragraph-fontStyle);
   line-height: var(--typography-paragraph-fontSize);
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: var(--shadows-1);
+
+  svg {
+    height: 18px;
+    width: 18px;
+    fill: var(--palette-primary-contrastText);
+  }
 
   &:hover {
     background-color: var(--palette-primary-light);

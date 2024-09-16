@@ -13,6 +13,25 @@
 
 ## Working in Progress
 
+The required features were the important ones to copy the basic user flow of trello (creating boards, lists and cards).
+
+Moving cards is still only possible with mouse, which isn't accessible, so my first priority would be adding an action bar in the cards to be able to move them with the keyboard.
+
+Second, I didn't have enough time to cover the entire Home page with tests, so only the components folder is covered with tests. So, I would add these missing tests before proceeding to add more features.
+
+Last but not least, I tried my best to make more commits on this. Each commit is still meaningful and add part of the required features, tests or missing components to build the page. Even then, in a real application, I would split each required or additional feature in a separated story task.
+
+To help to understand the changes, I made a shortlist of my decision path of how I approached this:
+
+- Check trello and create a list of planned features
+- Create project with create react app and pushed it to a private repository
+- Add font, prettier, sass, storybook, chromatic and Node.js CI script
+- Add board, list, cards and editable texts, but missing CRUD operations
+- Add the CRUD of boards, lists and cards
+- Add persistent state in local storage (for sidebar state and boards)
+- Add missing storybook stories
+- Add missing tests
+
 ### Required features
 
 - [x] Create Board

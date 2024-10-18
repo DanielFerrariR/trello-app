@@ -12,9 +12,9 @@ import { useState } from 'react';
 
 interface DashboardSidebarProps {
   boards: Board[];
-  setBoards: React.Dispatch<React.SetStateAction<Board[]>>;
-  currentBoard: Board;
-  setCurrentBoard: React.Dispatch<React.SetStateAction<Board>>;
+  updateBoards: (boards: Board[]) => void;
+  currentBoardId: string;
+  updateCurrentBoardId: (id: string) => void;
 }
 
 export const getEmptyBoard = () => ({
@@ -25,9 +25,9 @@ export const getEmptyBoard = () => ({
 
 const DashboardSidebar = ({
   boards,
-  setBoards,
-  currentBoard,
-  setCurrentBoard,
+  updateBoards,
+  currentBoardId,
+  updateCurrentBoardId,
 }: DashboardSidebarProps) => {
   const [isOpen, setIsOpen] = useState(() => {
     const isSidebarOpen = localStorage.getItem('isSidebarOpen');
@@ -38,13 +38,13 @@ const DashboardSidebar = ({
   const addNewBoard = () => {
     const newBoards = cloneDeep(boards);
     newBoards.push(getEmptyBoard());
-    setBoards(newBoards);
+    updateBoards(newBoards);
   };
 
   const deleteBoard = (boardId: string) => {
     let newBoards = cloneDeep(boards);
     newBoards = newBoards.filter((board) => board.id !== boardId);
-    setBoards(newBoards);
+    updateBoards(newBoards);
   };
 
   const handleToggle = (isOpen: boolean) => {
@@ -60,13 +60,13 @@ const DashboardSidebar = ({
     >
       <div className={styles.boardListTitleWrapper}>
         <Text className={styles.boardListTitle} type="subsection">
-          Your paintings
+          Your boards
         </Text>
         <IconButton ariaLabel="Add" icon={AddIcon} onClick={addNewBoard} />
       </div>
       <div className={styles.boardListWrapper}>
         {boards.map((board) => {
-          const isCurrentBoard = currentBoard.id === board.id;
+          const isCurrentBoard = currentBoardId === board.id;
           return (
             <div key={board.id} className={styles.boardButtonWrapper}>
               <button
@@ -75,7 +75,7 @@ const DashboardSidebar = ({
                   isCurrentBoard && styles.isCurrentBoard
                 )}
                 disabled={isCurrentBoard}
-                onClick={() => setCurrentBoard(board)}
+                onClick={() => updateCurrentBoardId(board.id)}
               >
                 {board.title}
               </button>

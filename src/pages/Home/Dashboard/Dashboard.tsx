@@ -13,10 +13,13 @@ import { v4 as uuidv4 } from 'uuid';
 
 interface DashboardProps {
   board: Board;
-  setBoard: React.Dispatch<React.SetStateAction<Board>>;
+  updateBoard: (board: Board) => void;
 }
 
-const Dashboard = ({ board, setBoard }: DashboardProps): React.ReactElement => {
+const Dashboard = ({
+  board,
+  updateBoard,
+}: DashboardProps): React.ReactElement => {
   const [draggedCardData, setDraggedCardData] = useState<ActiveCard | null>(
     null
   );
@@ -28,14 +31,14 @@ const Dashboard = ({ board, setBoard }: DashboardProps): React.ReactElement => {
   const updateBoardTitle = (text: string) => {
     const newBoard = cloneDeep(board);
     newBoard.title = text;
-    setBoard(newBoard);
+    updateBoard(newBoard);
   };
 
   const updateListTitle = (listId: string, text: string) => {
     const newBoard = cloneDeep(board);
     const listIndex = newBoard.lists.findIndex((list) => list.id === listId);
     newBoard.lists[listIndex].title = text;
-    setBoard(newBoard);
+    updateBoard(newBoard);
   };
 
   const updateCardTitle = (listId: string, cardId: string, text: string) => {
@@ -45,7 +48,7 @@ const Dashboard = ({ board, setBoard }: DashboardProps): React.ReactElement => {
       (card) => card.id === cardId
     );
     newBoard.lists[listIndex].cards[cardIndex].title = text;
-    setBoard(newBoard);
+    updateBoard(newBoard);
   };
 
   const updateCardDescription = (
@@ -59,7 +62,7 @@ const Dashboard = ({ board, setBoard }: DashboardProps): React.ReactElement => {
       (card) => card.id === cardId
     );
     newBoard.lists[listIndex].cards[cardIndex].description = text;
-    setBoard(newBoard);
+    updateBoard(newBoard);
   };
 
   const addNewList = () => {
@@ -69,13 +72,13 @@ const Dashboard = ({ board, setBoard }: DashboardProps): React.ReactElement => {
       title: 'New List',
       cards: [],
     });
-    setBoard(newBoard);
+    updateBoard(newBoard);
   };
 
   const deleteList = (listId: string) => {
     const newBoard = cloneDeep(board);
     newBoard.lists = newBoard.lists.filter((list) => list.id !== listId);
-    setBoard(newBoard);
+    updateBoard(newBoard);
   };
 
   const addNewCard = (listId: string) => {
@@ -85,7 +88,7 @@ const Dashboard = ({ board, setBoard }: DashboardProps): React.ReactElement => {
       id: uuidv4(),
       title: 'New Card',
     });
-    setBoard(newBoard);
+    updateBoard(newBoard);
   };
 
   const deleteCard = (cardId: string, listId: string) => {
@@ -94,7 +97,7 @@ const Dashboard = ({ board, setBoard }: DashboardProps): React.ReactElement => {
     newBoard.lists[listIndex].cards = newBoard.lists[listIndex].cards.filter(
       (card) => card.id !== cardId
     );
-    setBoard(newBoard);
+    updateBoard(newBoard);
   };
 
   const handleDrop = (
@@ -120,7 +123,7 @@ const Dashboard = ({ board, setBoard }: DashboardProps): React.ReactElement => {
     // Add card to the new list
     const list = newBoard.lists.find((list) => list.id === listId)!;
     list.cards.push(card);
-    setBoard(newBoard);
+    updateBoard(newBoard);
   };
 
   const handleDragOver = (event: React.DragEvent<HTMLDivElement>) =>

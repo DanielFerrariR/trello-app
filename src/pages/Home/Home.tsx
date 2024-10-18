@@ -1,48 +1,56 @@
 import styles from './Home.module.scss';
 import { Dashboard } from './Dashboard';
-import { useEffect, useRef, useState } from 'react';
+import { useMemo, useState } from 'react';
 import { Board } from './Dashboard/Dashboard.types';
-import cloneDeep from 'lodash/cloneDeep';
 import DashboardSidebar, {
   getEmptyBoard,
 } from './DashboardSidebar/DashboardSidebar';
+import cloneDeep from 'lodash/cloneDeep';
 
 const Home = () => {
   const [boards, setBoards] = useState<Board[]>(() => {
     const boards = localStorage.getItem('boards');
-    if (!boards) return [getEmptyBoard()];
-    return JSON.parse(boards);
+    if (boards) return JSON.parse(boards);
+    return [getEmptyBoard()];
   });
-  const [currentBoard, setCurrentBoard] = useState(boards[0]);
-  const onceRef = useRef(false);
+  const [currentBoardId, setCurrentBoardId] = useState(() => {
+    const boardId = localStorage.getItem('currentBoardId');
+    const currentBoard = boards.find((board) => board.id === boardId);
+    if (currentBoard) return currentBoard.id;
+    return boards[0].id;
+  });
+  const currentBoard = useMemo(
+    () => boards.find((board) => board.id === currentBoardId)!,
+    [boards, currentBoardId]
+  );
 
-  useEffect(() => {
-    if (onceRef.current) {
-      onceRef.current = false;
-      return;
-    }
-    onceRef.current = true;
+  const updateBoards = (newBoards: Board[]) => {
+    localStorage.setItem('boards', JSON.stringify(newBoards));
+    setBoards(newBoards);
+  };
 
-    let newBoards = cloneDeep(boards);
-
-    newBoards = newBoards.map((board) => {
-      if (board.id === currentBoard.id) return currentBoard;
+  const updateBoard = (newBoard: Board) => {
+    const newBoards = cloneDeep(boards).map((board) => {
+      if (board.id === currentBoardId) return newBoard;
       return board;
     });
+    updateBoards(newBoards);
+  };
 
-    localStorage.setItem('boards', JSON.stringify(boards));
-    setBoards(newBoards);
-  }, [currentBoard, boards]);
+  const updateCurrentBoardId = (id: string) => {
+    localStorage.setItem('currentBoardId', id);
+    setCurrentBoardId(id);
+  };
 
   return (
     <div className={styles.homeWrapper}>
       <DashboardSidebar
         boards={boards}
-        setBoards={setBoards}
-        currentBoard={currentBoard}
-        setCurrentBoard={setCurrentBoard}
+        updateBoards={updateBoards}
+        currentBoardId={currentBoardId}
+        updateCurrentBoardId={updateCurrentBoardId}
       />
-      <Dashboard board={currentBoard} setBoard={setCurrentBoard} />
+      <Dashboard board={currentBoard} updateBoard={updateBoard} />
     </div>
   );
 };
